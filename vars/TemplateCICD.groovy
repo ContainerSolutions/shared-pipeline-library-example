@@ -10,7 +10,7 @@ def call(body){
     pipeline{
         agent any{
             tools {
-                jdk 'jdk1.8.0_181'
+                // add tools here
             }
             environment {
                 // add ENV VARS here
@@ -47,6 +47,11 @@ def call(body){
                     steps {
                         echo ("Publish here")
                     }
+                }
+            }
+            post { 
+                always { 
+                    echo 'run audit trail here'
                 }
             }
         }
